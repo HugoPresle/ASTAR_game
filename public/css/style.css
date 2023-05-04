@@ -1,0 +1,10 @@
+body {
+    background-image: url(https://cdn.midjourney.com/3e9da62a-fd05-488f-b1e0-66491b783a48/grid_0.png);
+}
+#menuGear{
+    background-color: #f8f9fa!important;
+    border:#e6e6e6 solid 1px;
+    border-radius: 5px;
+    margin-top: 10px;
+
+}
