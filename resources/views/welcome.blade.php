@@ -1,35 +1,128 @@
 @extends('asset.header')
 
 @section('content')
-    <div id="bgimgr">
+    <div>
         <nav class="navbar navbar-light bg-light">
-            <a class="navbar-brand" href="">
-                <img src="{{ asset('img/téléchargement-removebg-preview.png') }}" width="30" height="30"
+            <a class="navbar-brand ms-3" href="">
+                <img src="{{ asset('img/téléchargement-removebg-preview.png') }}" width="50" height="50"
                     class="d-inline-block align-top" alt="">
-                Astar
+                ASTAR
             </a>
-            <div>
+            <div class="">
                 <a onclick="openMenuGear()" class="btn btn-light" role="button" aria-pressed="true">
-                    <i class="fa-solid fa-gears"></i>
+                    <i class="fa-solid fa-gears fa-lg"></i>
                 </a>
                 <nav class="position-absolute" style="z-index: 10; right: 0;">
                     <div id="menuGear" class="flex-column align-items-end" style="display: none;">
-                        <a class="nav-link active" aria-current="page" href="#">Active</a>
-                        <a class="nav-link" href="#">Link</a>
-                        <a class="nav-link" href="#">Paramettres</a>
-                        <a class="nav-link disabled">Se déconecter</a>
+                        <a class="nav-link p-1" href="#"><i class="fa-solid fa-gear"></i> Paramettres</a>
+                        <a class="nav-link p-1"><i class="fa-solid fa-right-from-bracket"></i> Se deconecter</a>
                     </div>
                 </nav>
             </div>
         </nav>
-
         {{-- div temporaire permettant de clicker pour supprimer le menu option --}}
         <div id="hiddingDiv" class="position-absolute" onclick="hideMenuGear()"
             style="width: 100vw;height: 100vw; z-index: 5;display: none;">
         </div>
 
-        <div>
+        <div class="card" style="background-color: #f8f9fa;border-color: #f8f9fa00 ;">
+            <div class="card-body">
+                <div class="container-fluid text-center">
+                    <div class="row">
+                        <div class="col-12 card mb-1">
+                            <div class="">
+                                <h3>TITRE</h3>
+                            </div>
+                        </div>
+                        <div class="col card p-0" id="leftDiv">
+                            <div class="card m-1">
+                                <h3>Menu</h3>
+                                <nav>
+                                    <div class="d-flex flex-column mb-3">
+                                        <a id="playerMenu" class="border rounded p-1 m-1" onclick="menuNavigation(1)">
+                                            <i class="fa-solid fa-map-location-dot"></i>
+                                            Map
+                                        </a>
+                                        <a id="playerMenu" class="border rounded p-1 m-1" onclick="menuNavigation(2)">
+                                            <i class="fa-solid fa-skull"></i>
+                                            Mes Monstres
+                                        </a>
+                                        <a id="playerMenu" class="border rounded p-1 m-1">
+                                            <i class="fa-solid fa-paw"></i>
+                                            Bestiaire
+                                        </a>
+                                        <a id="playerMenu" class="border rounded p-1 m-1">
+                                            <i class="fa-solid fa-parachute-box"></i>
+                                            Inventaire
+                                        </a>
+                                        <a id="playerMenu" class="border rounded p-1 m-1">
+                                            <i class="fa-solid fa-id-card"></i>
+                                            Mon Profil
+                                        </a>
+                                    </div>
+                                </nav>
+                            </div>
+                            <div class="card m-1">
+                                dzdqsd
+                            </div>
+                        </div>
 
+                        <div class="col-7 card p-0 " id="centerDiv">
+                            {{-- Div map --}}
+                            <div id="divMap">
+                                <div class="row card m-1">
+                                    <h3>Map</h3>
+                                    <div class="col m-1">
+                                        <button class="btn btn-light" onclick="btnMap(1)" data-bs-toggle="tooltip"
+                                            data-bs-placement="top" data-bs-title="Villes Seulement"><i
+                                                class="fa-solid fa-hotel"></i></button>
+                                        <button class="btn btn-light" onclick="btnMap(2)" data-bs-toggle="tooltip"
+                                            data-bs-placement="top" data-bs-title="Ports/Lacs/Mers"><i
+                                                class="fa-solid fa-water"></i></button>
+                                        <button class="btn btn-light" onclick="btnMap(3)" data-bs-toggle="tooltip"
+                                            data-bs-placement="top" data-bs-title="Îles et Forêt"><i
+                                                class="fa-solid fa-volcano"></i></i></button>
+                                        <button class="btn btn-light" onclick="btnMap(4)" data-bs-toggle="tooltip"
+                                            data-bs-placement="top" data-bs-title="Tout"><i
+                                                class="fa-solid fa-location-crosshairs"></i></button>
+                                    </div>
+                                </div>
+                                <div class=" card m-1">
+                                    <img id="imgMap" src="{{ asset('img/map/Astars_mapComplete.jpg') }}"
+                                        class="img-fluid rounded m-1">
+                                </div>
+
+                            </div>
+
+                            {{-- Div mes monstres --}}
+                            <div id="divMonstre" style="display: none">
+                                <div class="row card m-1">
+                                    <h3>Mes Monstres</h3>
+                                </div>
+                                <div class="row card m-1">
+                                    @for ($i = 0; $i < 10; $i++)
+                                        <div class="card p-0" style="width: 4rem;">
+                                            <img src="{{ asset('img/téléchargement-removebg-preview.png') }}" class="card-img-top img-fluid" alt="...">
+                                            <div class="card-body p-0">
+                                                <a>000</a>
+                                            </div>
+                                        </div>
+                                    @endfor
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col card p-0" id="rightDiv">
+                            <div class="card m-1">
+                                <h3>YES</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 @endsection

@@ -1,10 +1,35 @@
 body {
-    background-image: url(https://cdn.midjourney.com/3e9da62a-fd05-488f-b1e0-66491b783a48/grid_0.png);
+    background-color: #ebebeb !important;
 }
 #menuGear{
-    background-color: #f8f9fa!important;
-    border:#e6e6e6 solid 1px;
+    background-color: #ebebeb!important;
+    border:#dedede solid 1px;
     border-radius: 5px;
     margin-top: 10px;
+
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+#playerMenu{
+    background-color: #f8f9fa;
+}
+
+#leftDiv{
+    background-color: #f8f9fa00;
+    border-color:#f8f9fa00 ;
+
+}
+#centerDiv{
+    background-color: #f8f9fa00;
+    border-color:#f8f9fa00 ;
+
+}
+#rightDiv{
+    background-color: #f8f9fa;
+    border-color:#f8f9fa00 ;
 
 }
