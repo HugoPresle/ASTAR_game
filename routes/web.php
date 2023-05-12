@@ -1,24 +1,25 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PlayerController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
 
-Route::get('/', function () {
-    return view('login');
-});
-Route::get('/game', function () {
+
+Route::middleware(['auth.check'])->get('/', function () {
     return view('welcome');
 });
-Route::get('/register', function () {
-    return view('register');
-});
+/* LOGIN/REGISTER ROUTES */
+    // GET VIEW 
+    Route::get('/login', function () {
+        return view('login');
+    });
+
+    Route::get('/register', function () {
+        return view('register');
+    });
+    //function
+    Route::post('/login', [PlayerController::class, 'login']);
+    Route::get('/logout', [PlayerController::class, 'logout']);
+    Route::post('/players', [PlayerController::class, 'create']);
+
+

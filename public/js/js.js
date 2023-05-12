@@ -47,11 +47,28 @@ function menuNavigation(params) {
         case 1:
             document.getElementById("divMap").style.display = "block"
             document.getElementById("divMonstre").style.display = "none"
+            document.getElementById("divBestiaire").style.display = "none"
+            document.getElementById("divInventaire").style.display = "none"
             break;
         case 2:
-            document.getElementById("divMonstre").style.display = "block"
             document.getElementById("divMap").style.display = "none"
+            document.getElementById("divMonstre").style.display = "block"
+            document.getElementById("divBestiaire").style.display = "none"
+            document.getElementById("divInventaire").style.display = "none"
             break;
+        case 3:
+            document.getElementById("divMap").style.display = "none"
+            document.getElementById("divMonstre").style.display = "none"
+            document.getElementById("divBestiaire").style.display = "block"
+            document.getElementById("divInventaire").style.display = "none"
+            break;
+        case 4:
+            document.getElementById("divMap").style.display = "none"
+            document.getElementById("divMonstre").style.display = "none"
+            document.getElementById("divBestiaire").style.display = "none"
+            document.getElementById("divInventaire").style.display = "block"
+            break;
+
 
 
         default:
