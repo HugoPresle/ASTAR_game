@@ -26,7 +26,7 @@ Rejoignez-nous et commencez votre aventure dès maintenant !
 
 
 ## Documentation
-Notre [Wiki](https://linktodocumentation) est un guide exhaustif pour vous aider à découvrir toutes les fonctionnalités du jeu. Voici un aperçu de ce que vous y trouverez:
+Notre [Wiki](https://github.com/HugoPresle/ASTAR_game/wiki) est un guide exhaustif pour vous aider à découvrir toutes les fonctionnalités du jeu. Voici un aperçu de ce que vous y trouverez:
 - Un guide de démarrage pour vous aider à comprendre les principes de base du jeu et vous lancer dans l'aventure.
 - Des informations sur les portails de Gacha et comment utiliser les ⭐ GemStars ⭐ pour invoquer des monstres.
 - Une liste complète de tous les monstres disponibles dans le jeu, avec leurs caractéristiques et aptitudes.

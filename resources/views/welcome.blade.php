@@ -9,8 +9,21 @@
                 ASTAR
             </a>
             <div class="">
+                <a>
+                    {{ session('player')->username }} :</a>
+                <a>
+                    <i class="fa-solid fa-money-bill-1-wave"
+                        style="color: rgb(13, 143, 1);"></i></i>{{ session('player')->money }} </a>
+                <a>
+                    <i class="fa-solid fa-gem" style="color: rgb(42, 173, 255);"></i>{{ session('player')->gems }} </a>
+                <a>
+                    <i class="fa-solid fa-bolt-lightning"
+                        style="color: rgb(255, 204, 35);"></i>{{ session('player')->stamina }}
+                </a>
+
+
                 <a onclick="openMenuGear()" class="btn btn-light" role="button" aria-pressed="true">
-                    {{ session('player')->username }} <i class="fa-solid fa-gears fa-lg"></i>
+                    <i class="fa-solid fa-gears fa-lg"></i>
                 </a>
                 <nav class="position-absolute" style="z-index: 10; right: 0;">
                     <div id="menuGear" class="flex-column align-items-end" style="display: none;">
@@ -19,7 +32,6 @@
                         <a class="nav-link p-1" href="#"><i class="fa-solid fa-gear"></i> Paramettres</a>
                         <a class="nav-link p-1" href="/logout"><i class="fa-solid fa-right-from-bracket"></i> Se
                             deconecter</a>
-
                     </div>
                 </nav>
             </div>

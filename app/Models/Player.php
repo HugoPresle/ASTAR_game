@@ -15,6 +15,7 @@ class Player extends Model
         'password_hash', 
         'gems', 
         'stamina', 
+        'account_create',
         'last_login'
     ];
     public $timestamps = false;

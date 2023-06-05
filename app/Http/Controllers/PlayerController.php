@@ -24,11 +24,13 @@ class PlayerController extends Controller
             'password_hash' => bcrypt($validated['password']),
             'gems' => 100,
             'stamina' => 10,
+            'account_create' => now(),
             'last_login' => now()
         ]);
 
-        Auth::loginUsingId($player->player_id);
-        return redirect()->route('game');
+        Auth::login($player);
+        $request->session()->put('player', $player);
+        return redirect()->route('/');
     }
 
     public function login(Request $request)
@@ -39,6 +41,8 @@ class PlayerController extends Controller
         ]);
 
         $player = Player::where('username', $validated['username'])->first();
+        $player->last_login = now();
+        $player->save();
 
         if ($player && Hash::check($validated['password'], $player->password_hash)) {
             $request->session()->put('player', $player);
