@@ -2,20 +2,26 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
+use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
 
-class Player extends Model
+class Player extends Model implements AuthenticatableContract
 {
-    protected $table = 'player';
-    protected $primaryKey = 'player_id';
+    use Authenticatable;
+    protected $table = 'Player';
+    protected $primaryKey = 'idPlayer';
     protected $fillable = [
-        'username', 
-        'email', 
-        'password_hash', 
-        'gems', 
-        'stamina', 
-        'account_create',
+        'email' ,
+        'password' ,
+        'username',
+        'img',
+        'lvl',
+        'xp',
+        'money',
+        'gem',
+        'stamina',
+        'create_time',
         'last_login'
     ];
     public $timestamps = false;
