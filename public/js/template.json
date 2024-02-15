@@ -1,0 +1,151 @@
+{
+    "Player_Info": {
+        "avatar": 1,
+        "background": 1,
+        "energy": {
+            "energy": 100,
+            "energy_last_regen": "",
+            "energy_max": 100,
+            "energy_regen": 1,
+            "energy_regen_time": 60
+        },
+        "gems": 100,
+        "id": 125648,        
+        "last_login_date": "",
+        "last_save_date": "",
+        "level": 1,
+        "money": 1000,
+        "name": "Trainer",
+        "register_date": "",
+        "title": 0,
+        "xp": 0
+    },
+    "Player_Inventory": {
+        "Combat_Item": [],
+        "Monster_Item": []
+    },
+    "Player_Monster": {
+        "Captured": [],
+        "Discovered": [],
+        "Team": []
+    },
+    "Player_Progression": {
+        "Achievement": {
+            "achievement_finished": [],
+            "achievement_inProgress": []
+        },
+        "Dungeon": [],
+        "Main_Story": {
+            "chapter": 0,
+            "progress_Percent": 0,
+            "stage": 0
+        },
+        "Quest": {
+            "quest_finished": [],
+            "quest_inProgress": [],
+            "quest_taken": []
+        }
+    },
+    "Player_Stat": {
+        "Batle": {
+            "total_battle_lose": 0,
+            "total_battle_played": 0,
+            "total_battle_win": 0
+        },
+        "Item": {
+            "total_item_buy": 0,
+            "total_item_loot": 0,
+            "total_item_sell": 0
+        },
+        "Monster": {
+            "total_monster_catch": {
+                "acier": 0,
+                "combat": 0,
+                "dragon": 0,
+                "eau": 0,
+                "electrique": 0,
+                "feu": 0,
+                "glace": 0,
+                "insecte": 0,
+                "lumiere": 0,
+                "normal": 0,
+                "plante": 0,
+                "poison": 0,
+                "psy": 0,
+                "roche": 0,
+                "sol": 0,
+                "spectre": 0,
+                "tenebre": 0,
+                "ténèbres": 0,
+                "total": 0,
+                "vol": 0
+            },
+            "total_monster_evolve": {
+                "acier": 0,
+                "combat": 0,
+                "dragon": 0,
+                "eau": 0,
+                "electrique": 0,
+                "feu": 0,
+                "glace": 0,
+                "insecte": 0,
+                "lumiere": 0,
+                "normal": 0,
+                "plante": 2,
+                "poison": 0,
+                "psy": 0,
+                "roche": 0,
+                "sol": 0,
+                "spectre": 0,
+                "tenebre": 0,
+                "ténèbres": 0,
+                "total": 0,
+                "vol": 0
+            },
+            "total_monster_release": {
+                "acier": 0,
+                "combat": 0,
+                "dragon": 0,
+                "eau": 0,
+                "electrique": 0,
+                "feu": 0,
+                "glace": 0,
+                "insecte": 0,
+                "lumiere": 0,
+                "normal": 0,
+                "plante": 0,
+                "poison": 0,
+                "psy": 0,
+                "roche": 0,
+                "sol": 0,
+                "spectre": 0,
+                "tenebre": 0,
+                "ténèbres": 0,
+                "total": 0,
+                "vol": 0
+            }
+        },
+        "Dungeon": {
+            "total_dungeon_attempts": 0,
+            "total_dungeon_fail": 0,
+            "total_dungeon_success": 0
+        },
+        "total_achievement_finished": 0,
+        "total_energy_spent": 0,
+        "total_gems_earn": 100,
+        "total_gems_spent": 0,
+        "total_money_earn": 1000,
+        "total_money_spent": 0,
+        "total_portal_open": {
+            "epic": 0,
+            "legendary": 0,
+            "mythical": 0,
+            "rare": 0,
+            "total": 0,
+            "uncommon": 0
+        },
+        "total_quest_finished": 0,
+        "time_played": 0,
+        "total_xp": 0
+    }
+}

@@ -68,20 +68,21 @@ CREATE TABLE IF NOT EXISTS `astar_bdd`.`Item` (
 ) ENGINE = InnoDB;
 
 -- -----------------------------------------------------
--- Table `astar_bdd`.`Monstre`
+-- Table `astar_bdd`.`Monster`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `astar_bdd`.`Monstre`;
+DROP TABLE IF EXISTS `astar_bdd`.`Monster`;
 
-CREATE TABLE IF NOT EXISTS `astar_bdd`.`Monstre` (
-    `idMonstre` INT NOT NULL AUTO_INCREMENT,
+CREATE TABLE IF NOT EXISTS `astar_bdd`.`Monster` (
+    `idMonster` INT NOT NULL AUTO_INCREMENT,
     `name` VARCHAR(255) NULL,
+    `description` VARCHAR(255) NULL,
     `image` TEXT(255) NULL,
     `base_attack` INT NULL,
     `base_defense` INT NULL,
     `base_speed` INT NULL,
     `base_hp` INT NULL,
     `base_rarity` INT NULL,
-    PRIMARY KEY (`idMonstre`),
+    PRIMARY KEY (`idMonster`),
     CONSTRAINT `rarity` FOREIGN KEY (`base_rarity`) REFERENCES `astar_bdd`.`Rarity` (`idRarity`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE = InnoDB;
 
@@ -109,7 +110,7 @@ CREATE TABLE IF NOT EXISTS `astar_bdd`.`Monster_Type_Relation` (
     `monster_id` INT NOT NULL,
     `type_id` INT NOT NULL,
     PRIMARY KEY (`id`),
-    CONSTRAINT `monster` FOREIGN KEY (`monster_id`) REFERENCES `astar_bdd`.`Monstre` (`idMonstre`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+    CONSTRAINT `monster` FOREIGN KEY (`monster_id`) REFERENCES `astar_bdd`.`Monster` (`idMonster`) ON DELETE NO ACTION ON UPDATE NO ACTION,
     CONSTRAINT `type` FOREIGN KEY (`type_id`) REFERENCES `astar_bdd`.`Monster_Type` (`idMonster_Type`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE = InnoDB;
 
@@ -125,8 +126,8 @@ CREATE TABLE IF NOT EXISTS `astar_bdd`.`Evolve` (
     `evolved_monster` INT NULL,
     `tokens` INT NULL,
     PRIMARY KEY (`idEvolve`),
-    CONSTRAINT `base_monster` FOREIGN KEY (`base_monster`) REFERENCES `astar_bdd`.`Monstre` (`idMonstre`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-    CONSTRAINT `evolved_monster` FOREIGN KEY (`evolved_monster`) REFERENCES `astar_bdd`.`Monstre` (`idMonstre`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+    CONSTRAINT `base_monster` FOREIGN KEY (`base_monster`) REFERENCES `astar_bdd`.`Monster` (`idMonster`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+    CONSTRAINT `evolved_monster` FOREIGN KEY (`evolved_monster`) REFERENCES `astar_bdd`.`Monster` (`idMonster`) ON DELETE NO ACTION ON UPDATE NO ACTION,
     CONSTRAINT `token` FOREIGN KEY (`tokens`) REFERENCES `astar_bdd`.`Item` (`idItem`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE = InnoDB;
 

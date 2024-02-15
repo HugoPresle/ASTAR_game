@@ -23,28 +23,28 @@
             <hr class="border-gray-200" />
             <ul class="p-2 space-y-2 font-medium" id="playerMenu">
                 <li>
-                    <a id="menuMonstre" onclick="menuNavigation(this)"
-                        class="flex items-center px-4 py-2.5 text-sm font-medium transition-all duration-200 cursor-pointer rounded-lg group hover:text-white hover:bg-stone-600">
+                    <a id="menuMonstre" onclick="menuNavigation(this)" name="menuTab"
+                        class="selected flex items-center px-4 py-2.5 text-sm font-medium transition-all duration-200 cursor-pointer rounded-lg group hover:text-white hover:bg-stone-600">
                         <i class="fas fa-skull fa-lg pr-2"></i>
                         <span class="ms-3">Mes Monstres</span>
                     </a>
                 </li>
                 <li>
-                    <a id="menuMap" onclick="menuNavigation(this)"
-                        class="flex items-center px-4 py-2.5 text-sm font-medium transition-all duration-200 cursor-pointer rounded-lg group hover:text-white hover:bg-stone-600">
-                        <i class="fas fa-map-location-dot fa-lg pr-2"></i>
-                        <span class="ms-3">Map</span>
-                    </a>
-                </li>
-                <li>
-                    <a id="menuBestiaire" onclick="menuNavigation(this)"
+                    <a id="menuBestiaire" onclick="menuNavigation(this)" name="menuTab"
                         class="flex items-center px-4 py-2.5 text-sm font-medium transition-all duration-200 text-gray-900 hover:text-white rounded-lg hover:bg-stone-600 group ">
                         <i class="fas fa-paw fa-lg pr-2"></i>
                         <span class="ms-3">Bestiaire</span>
                     </a>
                 </li>
                 <li>
-                    <a id="menuInventaire" onclick="menuNavigation(this)"
+                    <a id="menuMap" onclick="menuNavigation(this)" name="menuTab"
+                        class="flex items-center px-4 py-2.5 text-sm font-medium transition-all duration-200 cursor-pointer rounded-lg group hover:text-white hover:bg-stone-600">
+                        <i class="fas fa-map-location-dot fa-lg pr-2"></i>
+                        <span class="ms-3">Map</span>
+                    </a>
+                </li>
+                <li>
+                    <a id="menuInventaire" onclick="menuNavigation(this)" name="menuTab"
                         class="flex items-center px-4 py-2.5 text-sm font-medium transition-all duration-200 cursor-pointer rounded-lg group hover:text-white hover:bg-stone-600">
                         <i class="fas fa-parachute-box fa-lg pr-2"></i>
                         <span class="ms-3">Inventaire</span>
@@ -52,26 +52,52 @@
 
                 </li>
                 <li>
-                    <a id="menuQuete" onclick="menuNavigation(this)"
+                    <a id="menuQuete" onclick="menuNavigation(this)" name="menuTab"
                         class="flex items-center px-4 py-2.5 text-sm font-medium transition-all duration-200 cursor-pointer rounded-lg group hover:text-white hover:bg-stone-600">
                         <i class="fas fa-clipboard-question fa-lg pr-2"></i>
                         <span class="ms-3">Quête</span>
                     </a>
                 </li>
                 <li>
-                    <a id="menuDonjon" onclick="menuNavigation(this)"
+                    <a id="menuDonjon" onclick="menuNavigation(this)" name="menuTab"
                         class="flex items-center px-4 py-2.5 text-sm font-medium transition-all duration-200 cursor-pointer rounded-lg group hover:text-white hover:bg-stone-600">
                         <i class="fas fa-dungeon fa-lg pr-2"></i>
                         <span class="ms-3">Donjon</span>
                     </a>
                 </li>
                 <li>
-                    <a id="menuInvocation" onclick="menuNavigation(this)"
+                    <a id="menuInvocation" onclick="menuNavigation(this)" name="menuTab"
                         class="flex items-center px-4 py-2.5 text-sm font-medium transition-all duration-200 cursor-pointer rounded-lg group hover:text-white hover:bg-stone-600">
                         <i class="fas fa-ticket fa-lg pr-2"></i>
                         <span class="ms-3">Invocation</span>
                     </a>
+
+                    <a href="" id="menuMonstreInfo" class="none"></a>
                 </li>
+
+                <hr class="border-gray-200" />
+                {{-- Menu --}}
+                <a id="" onclick="menuNavigation(this)" name="menuTab"
+                    class="flex items-center px-4 py-2.5 text-sm font-medium transition-all duration-200 cursor-pointer rounded-lg group hover:text-white hover:bg-stone-600">
+                    <i class="fas fa-newspaper fa-lg pr-2"></i>
+                    <span>Actualité</span>
+                </a>
+                <a id="" onclick="menuNavigation(this)" name="menuTab"
+                    class="flex items-center px-4 py-2.5 text-sm font-medium transition-all duration-200 cursor-pointer rounded-lg group hover:text-white hover:bg-stone-600">
+                    <i class="fas fa-gift fa-lg pr-2"></i>
+                    <span>Cadeau</span>
+                </a>
+                <a id="" onclick="menuNavigation(this)" name="menuTab"
+                    class="flex items-center px-4 py-2.5 text-sm font-medium transition-all duration-200 cursor-pointer rounded-lg group hover:text-white hover:bg-stone-600">
+                    <i class="fas fa-cogs fa-lg pr-2"></i>
+                    <span>Paramètres</span>
+                </a>
+
+                <a id="menuAdmin" onclick="menuNavigation(this)" name="menuTab"
+                    class="flex items-center px-4 py-2.5 text-sm font-medium transition-all duration-200 cursor-pointer rounded-lg group hover:text-white hover:bg-stone-600">
+                    <i class="fas fa-cogs fa-lg pr-2"></i>
+                    <span>Admin</span>
+                </a>
 
                 <hr class="border-gray-200" />
                 {{-- Avatar --}}
@@ -80,44 +106,26 @@
                         src="https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png" alt="avatar">
 
                     <div>
-                        <h1 class="text-xl font-semibold text-gray-700 capitalize">
-                            {{ session('player')->username }}</h1>
-
-                        <span>
-                            <i class="fas fa-money-bill-wave text-emerald-500"></i>{{ session('player')->money }}
-                        </span>
-                        <span>
-                            <i class="fas fa-gem text-sky-500 "></i>{{ session('player')->gem }}
-                        </span>
-                        <span>
-                            <i class="fas fa-bolt-lightning text-yellow-400"></i>{{ session('player')->stamina }}
-                        </span>
+                        <h1 id="hp_playerName" class="text-xl font-semibold text-gray-700 capitalize">
+                        </h1>
+                        <h2 class="font-semibold text-gray-700 capitalize">
+                            <span>Lvl: </span>
+                            <span id="hp_lvl"></span>
+                        </h2>
+                        <h3 class="font-semibold text-gray-700 capitalize">
+                            <i class="fas fa-money-bill-wave text-green-600"></i>
+                            <span id="hp_money"></span>
+                        </h3>
+                        <h3 class="font-semibold text-gray-700 capitalize">
+                            <i class="fas fa-gem text-blue-600 "></i>
+                            <span id="hp_gem"></span>
+                        </h3>
+                        <h3 class="font-semibold text-gray-700 capitalize">
+                            <i class="fas fa-bolt-lightning text-yellow-400"></i>
+                            <span id="hp_nrj"></span>
+                        </h3>
                     </div>
                 </div>
-
-                <hr class="border-gray-200" />
-                {{-- Menu --}}
-                <a id="menu" onclick="menuNavigation(this)"
-                    class="flex items-center px-4 py-2.5 text-sm font-medium transition-all duration-200 cursor-pointer rounded-lg group hover:text-white hover:bg-stone-600">
-                    <i class="fas fa-newspaper fa-lg pr-2"></i>
-                    <span>Actualité</span>
-                </a>
-                <a id="menu" onclick="menuNavigation(this)"
-                    class="flex items-center px-4 py-2.5 text-sm font-medium transition-all duration-200 cursor-pointer rounded-lg group hover:text-white hover:bg-stone-600">
-                    <i class="fas fa-gift fa-lg pr-2"></i>
-                    <span>Cadeau</span>
-                </a>
-                <a id="menu" onclick="menuNavigation(this)"
-                    class="flex items-center px-4 py-2.5 text-sm font-medium transition-all duration-200 cursor-pointer rounded-lg group hover:text-white hover:bg-stone-600">
-                    <i class="fas fa-cogs fa-lg pr-2"></i>
-                    <span>Paramètres</span>
-                </a>
-                <a id="menu" onclick="menuNavigation(this)"
-                    class="flex items-center px-4 py-2.5 text-sm font-medium transition-all duration-200 cursor-pointer rounded-lg group hover:text-white hover:bg-stone-600"
-                    href="/logout">
-                    <i class="fas fa-sign-out-alt fa-lg pr-2"></i>
-                    <span>Se déconnecter</span>
-                </a>
             </ul>
         </div>
     </aside>
@@ -125,20 +133,29 @@
     <div class="p-4 sm:ml-64">
         <div id="divPrincipal" class="p-4 border-2 border-dashed rounded-lg border-gray-200">
             {{-- Import another Blade file --}}
-            @include('divPrincipal.Monster.monster')
 
             {{-- Monster Info --}}
-            @include('divPrincipal.Monster.monsterInfo')
+            <div name="divPrincipal" id="divMonstreInfo" style="display: none" class="flex rounded-lg min-h-screen">
+                @include('divPrincipal.Monster.monsterInfo')
+            </div>
+            {{-- Monster --}}
+            <div name="divPrincipal" id="divMonstre" style="display: block" class="flex rounded-lg min-h-screen">
+                @include('divPrincipal.Monster.monster')
+            </div>
 
             {{-- Map --}}
-            @include('divPrincipal.map')
+            <div name="divPrincipal" id="divMap" style="display: none" class="flex rounded-lg min-h-screen">
+                @include('divPrincipal.map')
+            </div>
 
             {{-- Bestiaire --}}
-            @include('divPrincipal.Monster.bestiaire')
+            <div name="divPrincipal" id="divBestiaire" style="display: none" class="flex rounded-lg min-h-screen">
+                @include('divPrincipal.Monster.bestiaire')
+            </div>
 
 
             {{-- Inventaire --}}
-            <div id="divInventaire" style="display: none">
+            <div name="divPrincipal" id="divInventaire" style="display: none">
                 <div class="card m-1">
                     <h3 class="text-2xl">Inventaire</h3>
                     <div class="col m-1">
@@ -151,8 +168,20 @@
                 <div class=" card m-1">dfesdfsd
                 </div>
             </div>
+            
+            
+            {{-- Admin --}}
+            <div name="divPrincipal" id="divAdmin" style="display: none" class="flex rounded-lg min-h-screen">
+                @include('admin')
+            </div>
 
 
             {{-- Quete --}}
         </div>
+    @endsection
+    @section('scripts')
+        <script>
+            window.addEventListener("load", loadHomePage);
+            window.addEventListener("load", loadMonstersPage(@json($monsters)));
+        </script>
     @endsection

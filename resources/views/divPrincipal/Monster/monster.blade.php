@@ -1,191 +1,80 @@
 {{-- Monstre --}}
-<div id="divMonstre" style="display: block" class="flex rounded-lg min-h-screen">
-    {{-- Team --}}
-    <div class="card m-1">
-        <h3 class="text-2xl">Mon équipe</h3>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-2">
-        @for ($i = 1; $i <= 3; $i++)
-            {{-- Monster --}}
-            <div id="cardMonsterEquip{{ $i }}"
-                class="flex flex-col items-center justify-center w-full max-w-sm mx-auto">
-                <div class="w-full h-64 bg-center bg-cover rounded-lg shadow-md"
-                    style="background-image: url({{ asset('img/Bestiaire/003-Velociflora-removebg-preview.png') }}) ">
-                </div>
-
-                <div class="w-56 -mt-10 overflow-hidden  rounded-lg shadow-lg md:w-64 dark:bg-gray-800">
-                    <h3 class="py-2 font-bold tracking-wide text-center uppercase text-white">
-                        Monster{{ $i }}
-                    </h3>
-
-                    <div class="flex items-center justify-between px-3 py-2 bg-gray-200 dark:bg-gray-700">
-                        <span class="font-bold text-white">#{{ $i }}</span>
-                        <button onclick="showCard({{ $i }},true)"
-                            class="px-2 py-1 text-xs font-semibold text-white uppercase transition-colors duration-300 transform bg-gray-800 rounded hover:bg-gray-700 dark:hover:bg-gray-600 focus:bg-gray-700 dark:focus:bg-gray-600 focus:outline-none">
-                            Informations
-                        </button>
-                    </div>
-                </div>
-            </div>
-            {{-- Monster Info --}}
-            <div id="cardMonsterEquip{{ $i }}Details"
-                class="flex flex-col items-center justify-center w-full max-w-sm mx-auto hidden">
-                <div class="w-full h-64 bg-center bg-cover rounded-lg shadow-md "
-                    style="background-image: url({{ asset('img/Bestiaire/003-Velociflora-removebg-preview.png') }}) ">
-
-                    <div
-                        class="px-6 py-4 flex flex-col items-center justify-center bg-white bg-opacity-85 rounded mx-auto my-2">
-                        <h1 class="text-xl font-semibold text-gray-800 ">Nom{{ $i }} - Lvl :
-                            {{ $i }}
-                        </h1>
-                        <div class="flex items-center mt-4 text-gray-800">
-                            <i class="fa-solid fa-crosshairs fa-lg pr-2"></i>
-                            <h1 class="px-2 text-sm">-> 100</h1>
-                        </div>
-
-                        <div class="flex items-center mt-4 text-gray-800">
-                            <i class="fa-solid fa-shield-halved fa-lg pr-2"></i>
-                            <h1 class="px-2 text-sm">-> 300</h1>
-                        </div>
-
-                        <div class="flex items-center mt-4 text-gray-800">
-                            <i class="fa-solid fa-heart fa-lg pr-2"></i>
-                            <h1 class="px-2 text-sm">-> 018</h1>
-                        </div>
-                        <div class="flex items-center mt-4 text-gray-800">
-                            <i class="fa-solid fa-wind fa-lg pr-2"></i>
-                            <h1 class="px-2 text-sm">-> 198</h1>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="w-56 -mt-10 overflow-hidden  rounded-lg shadow-lg md:w-64 dark:bg-gray-800">
-                    <h3 class="py-2 font-bold tracking-wide text-center uppercase text-white">
-                        Monster{{ $i }} Info
-                        <a href="#" onclick="showMonsterInfo({{ $i }})"
-                            title="Plus d'information">
-                            <i class="fa-solid fa-circle-plus fa-xs"></i>
-                        </a>
-                    </h3>
-                    </h3>
-
-                    <div class="flex items-center justify-between px-3 py-2 bg-gray-200 dark:bg-gray-700">
-                        <span class="font-bold text-white">#{{ $i }}</span>
-                        <button onclick="hideCard({{ $i }},true)"
-                            class="px-2 py-1 text-xs font-semibold text-white uppercase transition-colors duration-300 transform bg-gray-800 rounded hover:bg-gray-700 dark:hover:bg-gray-600 focus:bg-gray-700 dark:focus:bg-gray-600 focus:outline-none">
-                            Close
-                        </button>
-                    </div>
-                </div>
-            </div>
-        @endfor
-
-    </div>
-    <hr class="border-gray-200 m-2" />
-
-    {{-- Mes Monster --}}
-    <div class="card m-1">
-        <h3 class="text-2xl">Mes Monstres</h3>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-        @for ($i = 1; $i <= 12; $i++)
-            {{-- Monster --}}
-            <div id="cardMonster{{ $i }}"
-                class="flex flex-col items-center justify-center w-full max-w-sm mx-auto">
-                <div class="w-full h-64 bg-center bg-cover rounded-lg shadow-md"
-                    style="background-image: url({{ asset('/img/Bestiaire/013-Owltale-removebg-preview.png') }}) ">
-                </div>
-
-                <div class="w-56 -mt-10 overflow-hidden  rounded-lg shadow-lg md:w-64 dark:bg-gray-800">
-                    <h3 class="py-2 font-bold tracking-wide text-center uppercase text-white">
-                        Monster{{ $i }}
-                    </h3>
-
-                    <div class="flex items-center justify-between px-3 py-2 bg-gray-200 dark:bg-gray-700">
-                        <span class="font-bold text-white">#{{ $i }}</span>
-                        <button onclick="showCard({{ $i }},false)"
-                            class="px-2 py-1 text-xs font-semibold text-white uppercase transition-colors duration-300 transform bg-gray-800 rounded hover:bg-gray-700 dark:hover:bg-gray-600 focus:bg-gray-700 dark:focus:bg-gray-600 focus:outline-none">
-                            Informations
-                        </button>
-                    </div>
-                </div>
-            </div>
-            {{-- Monster Info --}}
-            <div id="cardMonster{{ $i }}Details"
-                class="flex flex-col items-center justify-center w-full max-w-sm mx-auto hidden">
-                <div class="w-full h-64 bg-center bg-cover rounded-lg shadow-md "
-                    style="background-image: url({{ asset('/img/Bestiaire/013-Owltale-removebg-preview.png') }}) ">
-
-                    <div
-                        class="px-6 py-4 flex flex-col items-center justify-center bg-white bg-opacity-85 rounded mx-auto my-2">
-                        <h1 class="text-xl font-semibold text-gray-800 ">Nom{{ $i }} - Lvl :
-                            {{ $i }}</h1>
-
-                        <div class="flex items-center mt-4 text-gray-800">
-                            <i class="fa-solid fa-crosshairs fa-lg pr-2"></i>
-                            <h1 class="px-2 text-sm">-> 100</h1>
-                        </div>
-
-                        <div class="flex items-center mt-4 text-gray-800">
-                            <i class="fa-solid fa-shield-halved fa-lg pr-2"></i>
-                            <h1 class="px-2 text-sm">-> 300</h1>
-                        </div>
-
-                        <div class="flex items-center mt-4 text-gray-800">
-                            <i class="fa-solid fa-heart fa-lg pr-2"></i>
-                            <h1 class="px-2 text-sm">-> 018</h1>
-                        </div>
-                        <div class="flex items-center mt-4 text-gray-800">
-                            <i class="fa-solid fa-wind fa-lg pr-2"></i>
-                            <h1 class="px-2 text-sm">-> 198</h1>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="w-56 -mt-10 overflow-hidden  rounded-lg shadow-lg md:w-64 dark:bg-gray-800">
-                    <h3 class="py-2 font-bold tracking-wide text-center uppercase text-white">
-                        Monster{{ $i }} Info
-                        <a href="#" title="Plus d'information"><i
-                                class="fa-solid fa-circle-plus fa-xs"></i></a>
-                    </h3>
-
-                    <div class="flex items-center justify-between px-3 py-2 bg-gray-200 dark:bg-gray-700">
-                        <span class="font-bold text-white">#{{ $i }}</span>
-                        <button onclick="hideCard({{ $i }},false)"
-                            class="px-2 py-1 text-xs font-semibold text-white uppercase transition-colors duration-300 transform bg-gray-800 rounded hover:bg-gray-700 dark:hover:bg-gray-600 focus:bg-gray-700 dark:focus:bg-gray-600 focus:outline-none">
-                            Close
-                        </button>
-                    </div>
-                </div>
-            </div>
-        @endfor
-        <div class="flex">
-            <a href="#"
-                class="flex items-center px-4 py-2 mx-1 text-gray-500 bg-white rounded-md cursor-not-allowed dark:bg-gray-800 dark:text-gray-600">
-                previous
-            </a>
-
-            <a href="#"
-                class="items-center hidden px-4 py-2 mx-1 text-gray-700 transition-colors duration-300 transform bg-white rounded-md sm:flex dark:bg-gray-800 dark:text-gray-200 hover:bg-blue-600 dark:hover:bg-blue-500 hover:text-white dark:hover:text-gray-200">
-                1
-            </a>
-
-            <a href="#"
-                class="items-center hidden px-4 py-2 mx-1 text-gray-700 transition-colors duration-300 transform bg-white rounded-md sm:flex dark:bg-gray-800 dark:text-gray-200 hover:bg-blue-600 dark:hover:bg-blue-500 hover:text-white dark:hover:text-gray-200">
-                2
-            </a>
-
-            <a href="#"
-                class="items-center hidden px-4 py-2 mx-1 text-gray-700 transition-colors duration-300 transform bg-white rounded-md sm:flex dark:bg-gray-800 dark:text-gray-200 hover:bg-blue-600 dark:hover:bg-blue-500 hover:text-white dark:hover:text-gray-200">
-                3
-            </a>
-
-            <a href="#"
-                class="flex items-center px-4 py-2 mx-1 text-gray-700 transition-colors duration-300 transform bg-white rounded-md dark:bg-gray-800 dark:text-gray-200 hover:bg-blue-600 dark:hover:bg-blue-500 hover:text-white dark:hover:text-gray-200">
-                Next
-            </a>
-        </div>
-    </div>
+{{-- Team --}}
+<div class="card m-1">
+    <h3 class="text-2xl">Mon équipe</h3>
 </div>
+
+<div id="mp_monsterTeam" class="grid grid-cols-1 md:grid-cols-3 gap-1"></div>
+<hr class="border-gray-200 m-2" />
+
+{{-- Mes Monster --}}
+<div class="card m-1">
+    <h3 class="text-2xl">Mes Monstres</h3>
+    <nav class="relative bg-white shadow rounded-md">
+        <div class="container px-6 py-3 mx-auto md:flex">
+    
+            <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
+            <div
+                class="mx-auto absolute inset-x-0 z-20 w-full px-6 py-4 transition-all duration-300 ease-in-out bg-white md:mt-0 md:p-0 md:top-0 md:relative md:opacity-100 md:translate-x-0 md:flex md:items-center md:justify-between">
+                <div class="flex flex-col px-2 -mx-4 md:flex-row md:mx-10 md:py-0">
+                    
+                    <a href="#" onclick="showMonsterByTypeBtn(2)"
+                        class="px-2.5 py-2 text-gray-700 transition-colors duration-300 transform rounded-lg hover:text-violet-600 md:mx-2">
+                        Type
+                    </a>
+                    <a href="#" onclick="showMonsterByRarityBtn(2)"
+                        class="px-2.5 py-2 text-gray-700 transition-colors duration-300 transform rounded-lg hover:text-violet-600 md:mx-2">
+                        Rareté
+                    </a>
+                </div>
+    
+                <div class="relative mt-4 md:mt-0">
+                    <span class="absolute inset-y-0 left-0 flex items-center pl-3">
+                        <svg class="w-5 h-5 text-gray-400" viewBox="0 0 24 24" fill="none">
+                            <path
+                                d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            </path>
+                        </svg>
+                    </span>
+    
+                    <input type="text" id="nameInput" onkeyup="filter()"
+                        class="w-full py-2 pl-10 pr-4 text-gray-700 bg-white border rounded-lg focus:border-gray-600 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-gray-600"
+                        placeholder="Search">
+                </div>
+            </div>
+        </div>
+        <div id="typeMenu2" class="container px-6 py-3 mx-auto md:flex md:flex-wrap flex-wrap justify-center" style="display: none">
+            @foreach ($types as $type)
+                <button name="filterBtn" onclick="filter(this,'type','mp_myMonster')" style="color: {{ $type->color }};" value="{{ $type->idMonster_Type }}"
+                    class="font-semibold px-2.5 py-2 transition-colors duration-300 transform rounded-lg hover:text-gray-800 md:mx-2">
+                    {{ $type->nameType }}
+                </button>
+            @endforeach
+        </div>
+        <div id="rarityMenu2" class="container px-6 py-3 mx-auto md:flex md:flex-wrap" style="display: none">
+            @foreach ($raritys->take(6) as $rarity)
+                <button name="filterBtn" onclick="filter(this,'rarity','mp_myMonster')" value="{{ $rarity->idRarity }}"
+                    class="px-2.5 py-2 transition-colors duration-300 transform rounded-lg hover:text-gray-800 md:mx-2" id="rarityBtn">
+                    <div class="flex flex-col">
+                        <span class="font-semibold">{{ $rarity->name }}</span>
+                        <span class="{{$rarity->color}}">
+                            @php
+                                $maxStars = min($rarity->idRarity, 5);
+                            @endphp
+                            @for ($i = 0; $i < $maxStars; $i++)
+                                <i class="fa-solid fa-star fa-sm"></i>
+                            @endfor
+                            @for ($i = 0; $i < 5 - $maxStars; $i++)
+                                <i class="fa-regular fa-star fa-sm"></i>
+                            @endfor
+                        </span>
+                    </div>
+                </button>
+            @endforeach
+        </div>
+    </nav>
+</div>
+
+<div id="mp_myMonster" class="grid grid-cols-1 md:grid-cols-5 gap-1"></div>
+

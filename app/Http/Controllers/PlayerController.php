@@ -34,7 +34,7 @@ class PlayerController extends Controller
 
         Auth::login($player);
         $request->session()->put('player', $player);
-        return redirect()->route('home');
+        return redirect()->route('home')->with('success', 'Vous êtes connecté avec succès !');
     }
 
     public function login(Request $request)

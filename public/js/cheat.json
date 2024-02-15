@@ -1,0 +1,352 @@
+{
+    "Player_Info": {
+        "avatar": 1,
+        "background": 1,
+        "energy": {
+            "energy": 100,
+            "energy_last_regen": "2016-01-01 00:00:00",
+            "energy_max": 100,
+            "energy_regen": 1,
+            "energy_regen_time": 60
+        },
+        "gems": 1000,
+        "last_save_date": "2016-01-01 00:00:00",
+        "last_login_date": "2016-01-01 00:00:00",
+        "level": 21,
+        "money": 123453000,
+        "name": "xX_Cheater974_Xx",
+        "register_date": "2016-01-01 00:00:00",
+        "title": 1,
+        "xp": 0
+    },
+    "Player_Inventory": {
+        "Combat_Item": [
+            {
+                "itemId": 1,
+                "num": 10
+            },
+            {
+                "itemId": 2,
+                "num": 100
+            }
+        ],
+        "Monster_Item": [
+            {
+                "itemId": 5,
+                "num": 10
+            },
+            {
+                "itemId": 6,
+                "num": 100
+            }
+        ],
+        "Other_Item": [
+            {
+                "itemId": 4,
+                "num": 10
+            },
+            {
+                "itemId": 3,
+                "num": 100
+            }
+        ]
+    },
+    "Player_Monster": {
+        "Captured": [
+            {
+                "atk": 179,
+                "def": 120,
+                "hp": 100,
+                "id": "fgdfhgygfyud",
+                "item": {
+                    "itemId": 1,
+                    "num": 1
+                },
+                "level": 1,
+                "monsterId": 1,
+                "rarity": 1,
+                "speed": 10,
+                "surname": "小火龙",
+                "xp": 0
+            },
+            {
+                "atk": 130,
+                "def": 189,
+                "hp": 100,
+                "id": "fsdfsgrj",
+                "item": {
+                    "itemId": 1,
+                    "num": 1
+                },
+                "level": 60,
+                "monsterId": 2,
+                "rarity": 3,
+                "speed": 10,
+                "surname": "杰尼龟",
+                "xp": 0
+            },
+            {
+                "atk": 130,
+                "def": 189,
+                "hp": 100,
+                "id": "rdkdp",
+                "item": {
+                    "itemId": 1,
+                    "num": 1
+                },
+                "level": 47,
+                "monsterId": 3,
+                "rarity": 3,
+                "speed": 10,
+                "surname": "tomatoad",
+                "xp": 0
+            },
+            {
+                "atk": 130,
+                "def": 189,
+                "hp": 100,
+                "id": "dlssjf",
+                "item": {
+                    "itemId": 1,
+                    "num": 1
+                },
+                "level": 7,
+                "monsterId": 4,
+                "rarity": 3,
+                "speed": 10,
+                "surname": "Yamask",
+                "xp": 0
+            },
+
+            {
+                "atk": 130,
+                "def": 189,
+                "hp": 1000,
+                "id": "dsqdsqol",
+                "item": {
+                    "itemId": 1,
+                    "num": 1
+                },
+                "level": 89,
+                "monsterId": 4,
+                "rarity": 3,
+                "speed": 120,
+                "surname": "losp",
+                "xp": 0
+            }
+
+        ],
+        "Discovered": [
+            1,
+            2,
+            3,
+            4,5,6,7
+        ],
+        "Team": [
+            "fgdfhgygfyud"
+        ]
+    },
+    "Player_Progression": {
+        "Achievement": {
+            "achievement_finished": [
+                {
+                    "achievementId": 1,
+                    "date_finished": "2016-01-01"
+                },
+                {
+                    "achievementId": 2,
+                    "date_finished": "2016-01-02"
+                },
+                {
+                    "achievementId": 3,
+                    "date_finished": "2016-01-03"
+                }
+            ],
+            "achievement_inProgress": [
+                {
+                    "achievementId": 4,
+                    "date_started": "2016-01-04",
+                    "progress_Percent": 50
+                },
+                {
+                    "achievementId": 5,
+                    "date_started": "2016-01-05",
+                    "progress_Percent": 20
+                },
+                {
+                    "achievementId": 6,
+                    "date_started": "2016-01-06",
+                    "progress_Percent": 80
+                }
+            ]
+        },
+        "Dungeon": [
+            {
+                "dungeonId": 1,
+                "number_attempts": 1,
+                "number_fail": 0,
+                "number_success": 1
+            },
+            {
+                "dungeonId": 2,
+                "number_attempts": 3,
+                "number_fail": 1,
+                "number_success": 2
+            }
+        ],
+        "Main_Story": {
+            "chapter": 1,
+            "progress_Percent": 0,
+            "stage": 1
+        },
+        "Quest": {
+            "quest_finished": [
+                {
+                    "date_finished": "2016-01-01",
+                    "questId": 1
+                },
+                {
+                    "date_finished": "2016-01-02",
+                    "questId": 2
+                },
+                {
+                    "date_finished": "2016-01-03",
+                    "questId": 3
+                }
+            ],
+            "quest_inProgress": [
+                {
+                    "date_started": "2016-01-04",
+                    "progress_Percent": 50,
+                    "questId": 4
+                },
+                {
+                    "date_started": "2016-01-05",
+                    "progress_Percent": 20,
+                    "questId": 5
+                },
+                {
+                    "date_started": "2016-01-06",
+                    "progress_Percent": 80,
+                    "questId": 6
+                }
+            ],
+            "quest_taken": [
+                {
+                    "date_taken": "2016-01-07",
+                    "questId": 7
+                },
+                {
+                    "date_taken": "2016-01-08",
+                    "questId": 8
+                },
+                {
+                    "date_taken": "2016-01-09",
+                    "questId": 9
+                }
+            ]
+        }
+    },
+    "Player_Stat": {
+        "Batle": {
+            "total_battle_lose": 50,
+            "total_battle_played": 100,
+            "total_battle_win": 50
+        },
+        "Item": {
+            "total_item_buy": 10,
+            "total_item_loot": 10,
+            "total_item_sell": 10
+        },
+        "Monster": {
+            "total_monster_catch": {
+                "acier": 5,
+                "combat": 0,
+                "dragon": 0,
+                "eau": 3,
+                "electrique": 0,
+                "feu": 0,
+                "glace": 0,
+                "insecte": 0,
+                "lumiere": 0,
+                "normal": 0,
+                "plante": 2,
+                "poison": 0,
+                "psy": 0,
+                "roche": 0,
+                "sol": 0,
+                "spectre": 0,
+                "tenebre": 0,
+                "ténèbres": 0,
+                "total": 10,
+                "vol": 0
+            },
+            "total_monster_evolve": {
+                "acier": 5,
+                "combat": 0,
+                "dragon": 0,
+                "eau": 3,
+                "electrique": 0,
+                "feu": 0,
+                "glace": 0,
+                "insecte": 0,
+                "lumiere": 0,
+                "normal": 0,
+                "plante": 2,
+                "poison": 0,
+                "psy": 0,
+                "roche": 0,
+                "sol": 0,
+                "spectre": 0,
+                "tenebre": 0,
+                "ténèbres": 0,
+                "total": 10,
+                "vol": 0
+            },
+            "total_monster_release": {
+                "acier": 5,
+                "combat": 0,
+                "dragon": 0,
+                "eau": 3,
+                "electrique": 0,
+                "feu": 0,
+                "glace": 0,
+                "insecte": 0,
+                "lumiere": 0,
+                "normal": 0,
+                "plante": 2,
+                "poison": 0,
+                "psy": 0,
+                "roche": 0,
+                "sol": 0,
+                "spectre": 0,
+                "tenebre": 0,
+                "ténèbres": 0,
+                "total": 10,
+                "vol": 0
+            }
+        },
+        "Dungeon": {
+            "total_dungeon_attempts": 20,
+            "total_dungeon_fail": 10,
+            "total_dungeon_success": 10
+        },
+        "total_achievement_finished": 10,
+        "total_energy_spent": 100,
+        "total_gems_earn": 100,
+        "total_gems_spent": 100,
+        "total_money_earn": 1000,
+        "total_money_spent": 1000,
+        "total_portal_open": {
+            "epic": 2,
+            "legendary": 0,
+            "mythical": 0,
+            "rare": 3,
+            "total": 10,
+            "uncommon": 5
+        },
+        "total_quest_finished": 10,
+        "time_played": 100000,
+        "total_xp": 1000
+    }
+}

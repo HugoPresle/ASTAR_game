@@ -29,19 +29,25 @@
 
 
     {{-- JQUERY --}}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
+        integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     {{-- FONTAWESOME --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     {{-- CSS & JS --}}
 
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
     <script src="{{ asset('js/js.js') }}"></script>
+    <script src="{{ asset('js/data.js') }}"></script>
+    <script src="{{ asset('js/monster.js' )}}"></script>
 </head>
 
 <body style="overflow-x: hidden">
     @yield('content')
+
+    @yield('scripts')
 </body>
 
 </html>
