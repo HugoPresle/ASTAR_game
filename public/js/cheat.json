@@ -13,51 +13,30 @@
         "last_save_date": "2016-01-01 00:00:00",
         "last_login_date": "2016-01-01 00:00:00",
         "level": 21,
-        "money": 123453000,
+        "money": 10000000000,
         "name": "xX_Cheater974_Xx",
         "register_date": "2016-01-01 00:00:00",
         "title": 1,
         "xp": 0
     },
-    "Player_Inventory": {
-        "Combat_Item": [
-            {
-                "itemId": 1,
-                "num": 10
-            },
-            {
-                "itemId": 2,
-                "num": 100
-            }
-        ],
-        "Monster_Item": [
-            {
-                "itemId": 5,
-                "num": 10
-            },
-            {
-                "itemId": 6,
-                "num": 100
-            }
-        ],
-        "Other_Item": [
-            {
-                "itemId": 4,
-                "num": 10
-            },
-            {
-                "itemId": 3,
-                "num": 100
-            }
-        ]
-    },
+    "Player_Inventory": [
+        {
+            "itemId": 8,
+            "quantity": 10
+        },
+        {
+            "itemId": 6,
+            "quantity": 10
+        }
+
+    ],
     "Player_Monster": {
-        "Captured": [
+        "Monsters": [
             {
                 "atk": 179,
                 "def": 120,
                 "hp": 100,
-                "id": "fgdfhgygfyud",
+                "id": "111",
                 "item": {
                     "itemId": 1,
                     "num": 1
@@ -73,7 +52,7 @@
                 "atk": 130,
                 "def": 189,
                 "hp": 100,
-                "id": "fsdfsgrj",
+                "id": "222",
                 "item": {
                     "itemId": 1,
                     "num": 1
@@ -89,7 +68,7 @@
                 "atk": 130,
                 "def": 189,
                 "hp": 100,
-                "id": "rdkdp",
+                "id": "333",
                 "item": {
                     "itemId": 1,
                     "num": 1
@@ -105,7 +84,7 @@
                 "atk": 130,
                 "def": 189,
                 "hp": 100,
-                "id": "dlssjf",
+                "id": "444",
                 "item": {
                     "itemId": 1,
                     "num": 1
@@ -122,7 +101,7 @@
                 "atk": 130,
                 "def": 189,
                 "hp": 1000,
-                "id": "dsqdsqol",
+                "id": "555",
                 "item": {
                     "itemId": 1,
                     "num": 1
@@ -133,17 +112,40 @@
                 "speed": 120,
                 "surname": "losp",
                 "xp": 0
+            },
+            {
+                "atk": 1310,
+                "def": 1389,
+                "hp": 10040,
+                "id": "666",
+                "item": {
+                    "itemId": 1,
+                    "num": 1
+                },
+                "level": 109,
+                "monsterId": 100,
+                "rarity": 6,
+                "speed": 123,
+                "surname": "XXCHEATXX",
+                "xp": 0
+
             }
 
+        ],
+        "Captured": [
+            1,
+            2,
+            3,
+            4
         ],
         "Discovered": [
             1,
             2,
             3,
-            4,5,6,7
+            4,5,6,7,53,34
         ],
         "Team": [
-            "fgdfhgygfyud"
+            "111","666","444"
         ]
     },
     "Player_Progression": {

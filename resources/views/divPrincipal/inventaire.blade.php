@@ -1,13 +1,6 @@
-{{-- Monstre --}}
-{{-- Team --}}
 <div class="card my-3">
-    <div id="mp_monsterTeam" class="grid grid-cols-1 md:grid-cols-3 gap-2"></div>
-</div>    
-<hr class="border-gray-200 m-2" />
-
-{{-- Mes Monster --}}
-<div class="card my-3">
-    <nav class="relative bg-white shadow rounded-md my-2">
+    <h3 class="text-2xl my-3">Inventaire</h3>
+    <nav class="relative bg-white shadow rounded-md">
         <div class="container px-6 py-3 mx-auto md:flex">
             <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
             <div
@@ -15,15 +8,31 @@
                 <div class="flex">
                     <button onclick="showMonsterByTypeBtn(2)"
                         class="px-2.5 py-2 text-gray-700 transition-colors duration-300 transform rounded-lg hover:text-cyan-500 md:mx-2">
-                        Type
+                        Objets
+                        <i class="fa-solid fa-box-archive fa-lg"></i>
                     </button>
                     <button onclick="showMonsterByRarityBtn(2)"
                         class="px-2.5 py-2 text-gray-700 transition-colors duration-300 transform rounded-lg hover:text-cyan-500 md:mx-2">
-                        Rareté
+                        Equipement
+                        <i class="fa-solid fa-hammer fa-lg"></i>
                     </button>
-                    <button onclick="sortByLevel()" id="btnSortByLevel"
+                    <button href="#" onclick="showMonsterByLevel()"
                         class="px-2.5 py-2 text-gray-700 transition-colors duration-300 transform rounded-lg hover:text-cyan-500 md:mx-2">
-                        Trier par niveau
+                        Jetons d'évolution
+                        <i class="fa-solid fa-coins fa-lg"></i>
+                    </button>
+                    <button href="#" onclick="showMonsterByLevel()"
+                        class="px-2.5 py-2 text-gray-700 transition-colors duration-300 transform rounded-lg hover:text-cyan-500 md:mx-2">
+                        Consommables
+                        <i class="fa-solid fa-flask fa-lg"></i>
+                    </button>
+                    {{-- <button href="#" onclick="showMonsterByLevel()"
+                        class="px-2.5 py-2 text-gray-700 transition-colors duration-300 transform rounded-lg hover:text-cyan-500 md:mx-2">
+                        Runes
+                    </button> --}}
+                    <button href="#" onclick="showMonsterByLevel()"
+                        class="px-2.5 py-2 text-gray-700 transition-colors duration-300 transform rounded-lg hover:text-cyan-500 md:mx-2">
+                        Tout
                     </button>
                 </div>
 
@@ -50,38 +59,9 @@
                 </div>
             </div>
         </div>
-        <div id="typeMenu2" class="container px-6 py-3 mx-auto md:flex md:flex-wrap flex-wrap justify-center"
-            style="display: none">
-            @foreach ($types as $type)
-                <button name="filterBtn2" id="filterBtn" onclick="filter('mp_myMonster',this,'type')"
-                    style="color: {{ $type->color }};" value="{{ $type->idMonster_Type }}"
-                    class="font-semibold px-2.5 py-2 transition-colors duration-300 transform rounded-lg hover:bg-gray-100 md:mx-2">
-                    {{ $type->nameType }}
-                </button>
-            @endforeach
-        </div>
-        <div id="rarityMenu2" class="container px-6 py-3 mx-auto md:flex md:flex-wrap" style="display: none">
-            @foreach ($raritys->take(6) as $rarity)
-                <button name="filterBtn2" id="rarityBtn" onclick="filter('mp_myMonster',this,'rarity')"
-                    value="{{ $rarity->idRarity }}"
-                    class="px-2.5 py-2 transition-colors duration-300 transform rounded-lg hover:bg-gray-100 md:mx-2">
-                    <div class="flex flex-col">
-                        <span class="font-semibold">{{ $rarity->name }}</span>
-                        <span class="{{ $rarity->color }}">
-                            @php
-                                $maxStars = min($rarity->idRarity, 5);
-                            @endphp
-                            @for ($i = 0; $i < $maxStars; $i++)
-                                <i class="fa-solid fa-star fa-sm"></i>
-                            @endfor
-                            @for ($i = 0; $i < 5 - $maxStars; $i++)
-                                <i class="fa-regular fa-star fa-sm"></i>
-                            @endfor
-                        </span>
-                    </div>
-                </button>
-            @endforeach
-        </div>
     </nav>
-    <div id="mp_myMonster" class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-2"></div>
+    <div class="flex flex-wrap">
+        <div id="myItems" class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-2">
+        </div>
+    </div>
 </div>

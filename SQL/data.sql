@@ -212,3 +212,47 @@ VALUES
     (52,15,53),
     (54,35,55),
     (61,15,62);
+
+
+
+-- Inserting data into Item_Stats
+INSERT INTO `astar_bdd`.`Item_Stats` (`bonus`, `attack`, `defense`, `speed`, `hp`) VALUES
+(0, 0, 0, 0, 0),
+(5, 10, 15, 20, 25),
+(3, 8, 11, 14, 17),
+(7, 14, 21, 28, 35),
+(0, 0, 0, 0, 100);
+
+-- Inserting data into Item_Categories
+INSERT INTO `astar_bdd`.`Item_Categories` (`name`, `description`) VALUES
+('Weapon', 'Items that can be used to attack enemies'),
+('Armor', 'Items that can be used to defend against attacks'),
+('Accessory', 'Items that provide various bonuses'),
+('Jeton d''évolution', 'Jeton permettant d''évoluer un monstre'),
+('Consommable', 'Object permettant de soigner ou de booster un monstre');
+
+-- Inserting data into Item
+INSERT INTO `astar_bdd`.`Item` (`name`, `description`, `item_stats`, `item_categories`, `item_rarity`) VALUES
+('Sword', 'A sharp blade', 2, 1, 1),
+('Shield', 'A sturdy shield', 2, 2, 2),
+('Ring', 'A ring with magical properties', 3, 3, 3),
+('Jeton d''évolution M1', 'Jeton permettant d''évoluer le monstre 1', 0, 4, 1),
+('jeton d''évolution M2', 'Jeton permettant d''évoluer le monstre 2', 0, 4, 2),
+('Jeton d''évolution M6', 'Jeton permettant d''évoluer le monstre 6', 0, 4, 3),
+('Jeton d''évolution M8', 'Jeton permettant d''évoluer le monstre 8', 0, 4, 3),
+('Jeton d''évolution M15', 'Jeton permettant d''évoluer le monstre 15', 0, 4, 4),
+('Jeton d''évolution M16', 'Jeton permettant d''évoluer le monstre 16', 0, 4, 4),
+('Jeton d''évolution M61', 'Jeton permettant d''évoluer le monstre 61', 0, 4, 5),
+('Potion de soin', 'Potion permettant de soigner un monstre', 4, 5, 1),
+('Potion de mana','Permets de recharger la barre de mana', 4, 5, 2),
+('Potion de soin supérieur', 'Potion permettant de soigner un monstre', 4, 5, 3),
+('Potion de mana supérieur','Permets de recharger la barre de mana', 4, 5, 3),
+('Potion de soin ultime', 'Potion permettant de soigner un monstre', 4, 5, 4),
+('Potion de mana ultime','Permets de recharger la barre de mana', 4, 5, 4),
+('Potion de soin divine', 'Potion permettant de soigner un monstre', 4, 5, 5),
+('Potion de mana divine','Permets de recharger la barre de mana', 4, 5, 5),
+('Liasse de billet', 'Liase de billet permettant de gagner de l''argent', 0, 5, 1),
+('Liasse de billet supérieur', 'Liase de billet permettant de gagner de l''argent', 0, 5, 2),
+('Liasse de billet ultime', 'Liase de billet permettant de gagner de l''argent', 0, 5, 3),
+('Liasse de billet divine', 'Liase de billet permettant de gagner de l''argent', 0, 5, 4),
+('Liasse de billet divine', 'Liase de billet permettant de gagner de l''argent', 0, 5, 5);

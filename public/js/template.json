@@ -20,10 +20,8 @@
         "title": 0,
         "xp": 0
     },
-    "Player_Inventory": {
-        "Combat_Item": [],
-        "Monster_Item": []
-    },
+    "Player_Inventory":[    
+    ],
     "Player_Monster": {
         "Captured": [],
         "Discovered": [],

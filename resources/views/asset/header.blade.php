@@ -42,6 +42,7 @@
     <script src="{{ asset('js/js.js') }}"></script>
     <script src="{{ asset('js/data.js') }}"></script>
     <script src="{{ asset('js/monster.js' )}}"></script>
+    <script src="{{ asset('js/items.js') }}"></script>
 </head>
 
 <body style="overflow-x: hidden">

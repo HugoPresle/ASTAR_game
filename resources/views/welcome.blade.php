@@ -1,6 +1,9 @@
 @extends('asset.header')
 
 @section('content')
+    <div id="confirmDialog" class="fixed z-10 inset-0 overflow-y-auto hidden" style="z-index: 999999;">
+        @include('asset.alert')
+    </div>
     <button data-drawer-target="default-sidebar" data-drawer-toggle="default-sidebar" aria-controls="default-sidebar"
         type="button"
         class="inline-flex items-center p-2 mt-2 ms-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 light:focus:ring-gray-600">
@@ -24,8 +27,8 @@
             <ul class="p-2 space-y-2 font-medium" id="playerMenu">
                 <li>
                     <a id="menuMonstre" onclick="menuNavigation(this)" name="menuTab"
-                        class="selected flex items-center px-4 py-2.5 text-sm font-medium transition-all duration-200 cursor-pointer rounded-lg group hover:text-white hover:bg-stone-600">
-                        <i class="fas fa-skull fa-lg pr-2"></i>
+                        class="selected bg-stone-600 text-white flex items-center px-4 py-2.5 text-sm font-medium transition-all duration-200 cursor-pointer rounded-lg group hover:text-white hover:bg-stone-600">
+                        <i class="fas fa-dragon fa-beat fa-lg pr-2"></i>
                         <span class="ms-3">Mes Monstres</span>
                     </a>
                 </li>
@@ -71,7 +74,15 @@
                         <i class="fas fa-ticket fa-lg pr-2"></i>
                         <span class="ms-3">Invocation</span>
                     </a>
-
+                </li>
+                <li>
+                    <a id="menuShop" onclick="menuNavigation(this)" name="menuTab"
+                        class="flex items-center px-4 py-2.5 text-sm font-medium transition-all duration-200 cursor-pointer rounded-lg group hover:text-white hover:bg-stone-600">
+                        <i class="fas fa-store fa-lg"></i>
+                        <span class="ms-3">Shop</span>
+                    </a>
+                </li>
+                <li class="none">
                     <a href="" id="menuMonstreInfo" class="none"></a>
                 </li>
 
@@ -92,6 +103,11 @@
                     <i class="fas fa-cogs fa-lg pr-2"></i>
                     <span>Paramètres</span>
                 </a>
+                <a id="menuSave" href="/startingAdventure" onclick="menuNavigation(this)" name="menuTab"
+                    class="flex items-center px-4 py-2.5 text-sm font-medium transition-all duration-200 cursor-pointer rounded-lg group hover:text-white hover:bg-stone-600">
+                    <i class="fa-solid fa-floppy-disk fa-lg pr-2"></i>
+                    <span>Sauvegarder et Quitter</span>
+                </a>
 
                 <a id="menuAdmin" onclick="menuNavigation(this)" name="menuTab"
                     class="flex items-center px-4 py-2.5 text-sm font-medium transition-all duration-200 cursor-pointer rounded-lg group hover:text-white hover:bg-stone-600">
@@ -105,7 +121,7 @@
                     <img class="object-cover w-12 h-12 rounded-lg"
                         src="https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png" alt="avatar">
 
-                    <div>
+                    <div id="infoPlayer">
                         <h1 id="hp_playerName" class="text-xl font-semibold text-gray-700 capitalize">
                         </h1>
                         <h2 class="font-semibold text-gray-700 capitalize">
@@ -138,8 +154,9 @@
             <div name="divPrincipal" id="divMonstreInfo" style="display: none" class="flex rounded-lg min-h-screen">
                 @include('divPrincipal.Monster.monsterInfo')
             </div>
+
             {{-- Monster --}}
-            <div name="divPrincipal" id="divMonstre" style="display: block" class="flex rounded-lg min-h-screen">
+            <div name="divPrincipal" id="divMonstre" style="display: none" class="flex rounded-lg min-h-screen">
                 @include('divPrincipal.Monster.monster')
             </div>
 
@@ -148,40 +165,36 @@
                 @include('divPrincipal.map')
             </div>
 
+            {{-- Shop --}}
+            <div name="divPrincipal" id="divShop" style="display: block" class="flex rounded-lg min-h-screen">
+                @include('divPrincipal.shop')
+            </div>
+
+            {{-- Inventaire --}}
+            <div name="divPrincipal" id="divInventaire" style="display: none" class="flex rounded-lg min-h-screen">
+                @include('divPrincipal.inventaire')
+            </div>
+
             {{-- Bestiaire --}}
             <div name="divPrincipal" id="divBestiaire" style="display: none" class="flex rounded-lg min-h-screen">
                 @include('divPrincipal.Monster.bestiaire')
             </div>
 
-
-            {{-- Inventaire --}}
-            <div name="divPrincipal" id="divInventaire" style="display: none">
-                <div class="card m-1">
-                    <h3 class="text-2xl">Inventaire</h3>
-                    <div class="col m-1">
-                        <button onclick="btnSac(1)">Equipement</button>
-                        <button onclick="btnSac(2)">Objet</button>
-                        <button onclick="btnSac(3)">Jeton d’évolution</button>
-                        <button onclick="btnSac(4)">Tout</button>
-                    </div>
-                </div>
-                <div class=" card m-1">dfesdfsd
-                </div>
-            </div>
-            
-            
             {{-- Admin --}}
             <div name="divPrincipal" id="divAdmin" style="display: none" class="flex rounded-lg min-h-screen">
                 @include('admin')
             </div>
-
-
-            {{-- Quete --}}
         </div>
     @endsection
     @section('scripts')
         <script>
             window.addEventListener("load", loadHomePage);
-            window.addEventListener("load", loadMonstersPage(@json($monsters)));
+            window.addEventListener("load", markedDiscovered);
+            window.addEventListener("load", loadMyMonstersCard(@json($monsters)));
+            window.addEventListener("load", loadMyTeamCard(@json($monsters)));
+            window.addEventListener("load", loadInventory(@json($items)));
+            window.addEventListener("load", setMonsterList(@json($monsters)));
+            window.addEventListener("load", setRarities(@json($raritys)));
+            window.addEventListener("load", setItemList(@json($items)));
         </script>
     @endsection
