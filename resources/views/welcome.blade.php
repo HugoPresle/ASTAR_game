@@ -190,8 +190,11 @@
         <script>
             window.addEventListener("load", loadHomePage);
             window.addEventListener("load", markedDiscovered);
-            window.addEventListener("load", loadMyMonstersCard(@json($monsters)));
-            window.addEventListener("load", loadMyTeamCard(@json($monsters)));
+            var data = getData();
+            if (data.Player_Monster.Monsters != null) {
+                window.addEventListener("load", loadMyMonstersCard(@json($monsters)));
+                window.addEventListener("load", loadMyTeamCard(@json($monsters)));
+            }
             window.addEventListener("load", loadInventory(@json($items)));
             window.addEventListener("load", setMonsterList(@json($monsters)));
             window.addEventListener("load", setRarities(@json($raritys)));

@@ -554,8 +554,14 @@ function hideCard(cardNumber, equipe) {
 
 function markedDiscovered() {
     var json = getData();
-    const dicovered = json.Player_Monster.Discovered;
-    const captured = json.Player_Monster.Captured;
+    var dicovered = [];
+    var captured = [];
+    if (json.Player_Monster.Discovered != null) {
+        dicovered = json.Player_Monster.Discovered;
+    }
+    if (json.Player_Monster.Captured != null) {
+        captured = json.Player_Monster.Captured;
+    }
 
     const monsterList = getMonsterList();
     monsterList.forEach(monster => {
